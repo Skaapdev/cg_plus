@@ -132,7 +132,7 @@ local function make_craft_preview(formspec, player, context)
     -- Item name
     formspec[#formspec + 1] = string.format(
         "label[1.5,0.6;%s]",
-        cg.crafts[item] and minetest.registered_items[item].description or item
+        cg.crafts[item] and minetest.formspec_escape(minetest.registered_items[item].description) or item
     )
 
     -- No recipes label, if applicable
